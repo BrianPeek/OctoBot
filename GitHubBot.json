@@ -1,0 +1,1213 @@
+{
+  "luis_schema_version": "2.1.0",
+  "versionId": "0.1",
+  "name": "GitHubBot",
+  "desc": "",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "AddIssueComment"
+    },
+    {
+      "name": "CloseIssue"
+    },
+    {
+      "name": "CreateIssue"
+    },
+    {
+      "name": "Help"
+    },
+    {
+      "name": "IssueDetail"
+    },
+    {
+      "name": "ListIssues"
+    },
+    {
+      "name": "ListRepos"
+    },
+    {
+      "name": "None"
+    },
+    {
+      "name": "TypeCount"
+    }
+  ],
+  "entities": [
+    {
+      "name": "RepoName"
+    },
+    {
+      "name": "ScopeType",
+      "children": [
+        "Scope",
+        "Type"
+      ]
+    }
+  ],
+  "composites": [],
+  "closedLists": [],
+  "bing_entities": [
+    "datetimeV2",
+    "number"
+  ],
+  "actions": [],
+  "model_features": [
+    {
+      "name": "Public/Private",
+      "mode": true,
+      "words": "public,private",
+      "activated": true
+    },
+    {
+      "name": "Types",
+      "mode": true,
+      "words": "repo,repos,repositories,issues,gists,pull requests,pr,pr ' s,prs,pull reqs,pull req ' s,projects",
+      "activated": true
+    }
+  ],
+  "regex_features": [],
+  "utterances": [
+    {
+      "text": "hello",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "help",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "what can you do?",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "how does this work?",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "comment",
+      "intent": "AddIssueComment",
+      "entities": []
+    },
+    {
+      "text": "add comment",
+      "intent": "AddIssueComment",
+      "entities": []
+    },
+    {
+      "text": "list repos",
+      "intent": "ListRepos",
+      "entities": []
+    },
+    {
+      "text": "how do i use this?",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "what commands do you know?",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "how many issues",
+      "intent": "TypeCount",
+      "entities": [
+        {
+          "entity": "ScopeType::Type",
+          "startPos": 9,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "issue detail",
+      "intent": "IssueDetail",
+      "entities": []
+    },
+    {
+      "text": "add issue",
+      "intent": "CreateIssue",
+      "entities": []
+    },
+    {
+      "text": "create issue",
+      "intent": "CreateIssue",
+      "entities": []
+    },
+    {
+      "text": "how many repos do i have?",
+      "intent": "TypeCount",
+      "entities": [
+        {
+          "entity": "ScopeType::Type",
+          "startPos": 9,
+          "endPos": 13
+        }
+      ]
+    },
+    {
+      "text": "how many public repos do i have",
+      "intent": "TypeCount",
+      "entities": [
+        {
+          "entity": "ScopeType::Scope",
+          "startPos": 9,
+          "endPos": 14
+        },
+        {
+          "entity": "ScopeType::Type",
+          "startPos": 16,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "how many private repos do i have",
+      "intent": "TypeCount",
+      "entities": [
+        {
+          "entity": "ScopeType::Scope",
+          "startPos": 9,
+          "endPos": 15
+        },
+        {
+          "entity": "ScopeType::Type",
+          "startPos": 17,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "how many repos do i have",
+      "intent": "TypeCount",
+      "entities": [
+        {
+          "entity": "ScopeType::Type",
+          "startPos": 9,
+          "endPos": 13
+        }
+      ]
+    },
+    {
+      "text": "list my repos",
+      "intent": "ListRepos",
+      "entities": []
+    },
+    {
+      "text": "what are my public repos",
+      "intent": "ListRepos",
+      "entities": [
+        {
+          "entity": "ScopeType::Scope",
+          "startPos": 12,
+          "endPos": 17
+        },
+        {
+          "entity": "ScopeType::Type",
+          "startPos": 19,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "how many repositories",
+      "intent": "TypeCount",
+      "entities": [
+        {
+          "entity": "ScopeType::Type",
+          "startPos": 9,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "private repo count",
+      "intent": "TypeCount",
+      "entities": [
+        {
+          "entity": "ScopeType::Scope",
+          "startPos": 0,
+          "endPos": 6
+        },
+        {
+          "entity": "ScopeType::Type",
+          "startPos": 8,
+          "endPos": 11
+        }
+      ]
+    },
+    {
+      "text": "public repo count",
+      "intent": "TypeCount",
+      "entities": [
+        {
+          "entity": "ScopeType::Scope",
+          "startPos": 0,
+          "endPos": 5
+        },
+        {
+          "entity": "ScopeType::Type",
+          "startPos": 7,
+          "endPos": 10
+        }
+      ]
+    },
+    {
+      "text": "repo count",
+      "intent": "TypeCount",
+      "entities": [
+        {
+          "entity": "ScopeType::Type",
+          "startPos": 0,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "how many public rpeos",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "ScopeType::Scope",
+          "startPos": 9,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "how many public repos",
+      "intent": "TypeCount",
+      "entities": [
+        {
+          "entity": "ScopeType::Scope",
+          "startPos": 9,
+          "endPos": 14
+        },
+        {
+          "entity": "ScopeType::Type",
+          "startPos": 16,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "how many issues do i hae",
+      "intent": "TypeCount",
+      "entities": [
+        {
+          "entity": "ScopeType::Type",
+          "startPos": 9,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "how many issues are in the legoev3 repo",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 27,
+          "endPos": 33
+        },
+        {
+          "entity": "ScopeType::Type",
+          "startPos": 9,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "issues in the mjpeg repository",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 14,
+          "endPos": 18
+        },
+        {
+          "entity": "ScopeType::Type",
+          "startPos": 0,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "how many issues are in the legoev3 repo?",
+      "intent": "TypeCount",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 27,
+          "endPos": 33
+        },
+        {
+          "entity": "ScopeType::Type",
+          "startPos": 9,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "how many pr's are in the mjpeg project",
+      "intent": "TypeCount",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 25,
+          "endPos": 29
+        },
+        {
+          "entity": "ScopeType::Type",
+          "startPos": 9,
+          "endPos": 12
+        }
+      ]
+    },
+    {
+      "text": "how many prs are in the asdf repo",
+      "intent": "TypeCount",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 24,
+          "endPos": 27
+        },
+        {
+          "entity": "ScopeType::Type",
+          "startPos": 9,
+          "endPos": 11
+        },
+        {
+          "entity": "ScopeType::Type",
+          "startPos": 29,
+          "endPos": 32
+        }
+      ]
+    },
+    {
+      "text": "how many pull requests are in the fkdj project",
+      "intent": "TypeCount",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 34,
+          "endPos": 37
+        },
+        {
+          "entity": "ScopeType::Type",
+          "startPos": 9,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "pull reqs in legoev3",
+      "intent": "TypeCount",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 13,
+          "endPos": 19
+        },
+        {
+          "entity": "ScopeType::Type",
+          "startPos": 0,
+          "endPos": 8
+        }
+      ]
+    },
+    {
+      "text": "what are my private repos",
+      "intent": "ListRepos",
+      "entities": [
+        {
+          "entity": "ScopeType::Scope",
+          "startPos": 12,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "list my private repos",
+      "intent": "ListRepos",
+      "entities": [
+        {
+          "entity": "ScopeType::Scope",
+          "startPos": 8,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "list my public repos",
+      "intent": "ListRepos",
+      "entities": [
+        {
+          "entity": "ScopeType::Scope",
+          "startPos": 8,
+          "endPos": 13
+        }
+      ]
+    },
+    {
+      "text": "list the issues for the fdsa repository",
+      "intent": "ListIssues",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 24,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "what issues are in my asdf repository",
+      "intent": "ListIssues",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 22,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "what issues are in my mjpeg repo",
+      "intent": "ListIssues",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 22,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "list issues for the legoev3 repo",
+      "intent": "ListIssues",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 20,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "list issues in cccxz",
+      "intent": "ListIssues",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 15,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "what are the details for issue 13 in the asdf repo",
+      "intent": "IssueDetail",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 41,
+          "endPos": 44
+        }
+      ]
+    },
+    {
+      "text": "list issues",
+      "intent": "ListIssues",
+      "entities": []
+    },
+    {
+      "text": "details issue 10 legoev3",
+      "intent": "IssueDetail",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 17,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "what are the details for issue 3 in the legoev3 repo",
+      "intent": "IssueDetail",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 40,
+          "endPos": 46
+        }
+      ]
+    },
+    {
+      "text": "details issue 18 in legoev3",
+      "intent": "IssueDetail",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 20,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "what are the details for issue 10 in the legoev3 repo",
+      "intent": "IssueDetail",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 41,
+          "endPos": 47
+        }
+      ]
+    },
+    {
+      "text": "what are the details for issue 7 in the legoev3 repo",
+      "intent": "IssueDetail",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 40,
+          "endPos": 46
+        }
+      ]
+    },
+    {
+      "text": "what are the details for issue 23 in the legoev3 repo",
+      "intent": "IssueDetail",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 41,
+          "endPos": 47
+        }
+      ]
+    },
+    {
+      "text": "issues in mjpeg",
+      "intent": "ListIssues",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 10,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "issues in asdf",
+      "intent": "ListIssues",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 10,
+          "endPos": 13
+        }
+      ]
+    },
+    {
+      "text": "issues in zmachinelib",
+      "intent": "ListIssues",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 10,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "list issues in the mjpeg repo",
+      "intent": "ListIssues",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 19,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "issues in jjpeg",
+      "intent": "ListIssues",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 10,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "list issues in the asdf repo",
+      "intent": "ListIssues",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 19,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "details issue 18 legoev3",
+      "intent": "IssueDetail",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 17,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "details for issue 18 in legoev3",
+      "intent": "IssueDetail",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 24,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "issues in docs",
+      "intent": "ListIssues",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 10,
+          "endPos": 13
+        }
+      ]
+    },
+    {
+      "text": "issues in legoev3 repo",
+      "intent": "ListIssues",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 10,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "what are the issues in the legoev3 repo",
+      "intent": "ListIssues",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 27,
+          "endPos": 33
+        }
+      ]
+    },
+    {
+      "text": "issues in legoev3",
+      "intent": "ListIssues",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 10,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "how many pull requests in the legoev3 repo",
+      "intent": "TypeCount",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 30,
+          "endPos": 36
+        },
+        {
+          "entity": "ScopeType::Type",
+          "startPos": 9,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "how many private repos",
+      "intent": "TypeCount",
+      "entities": [
+        {
+          "entity": "ScopeType::Scope",
+          "startPos": 9,
+          "endPos": 15
+        },
+        {
+          "entity": "ScopeType::Type",
+          "startPos": 17,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "details issue 26 legoev3",
+      "intent": "IssueDetail",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 17,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "somecode(); adf",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "list issues in legoev3",
+      "intent": "ListIssues",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 15,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "what are the details for issue 7 in legoev3",
+      "intent": "IssueDetail",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 36,
+          "endPos": 42
+        }
+      ]
+    },
+    {
+      "text": "list issues in legoev3 repo",
+      "intent": "ListIssues",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 15,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "issues in asdd",
+      "intent": "ListIssues",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 10,
+          "endPos": 13
+        }
+      ]
+    },
+    {
+      "text": "details issue 1",
+      "intent": "IssueDetail",
+      "entities": []
+    },
+    {
+      "text": "list private repos",
+      "intent": "ListRepos",
+      "entities": [
+        {
+          "entity": "ScopeType::Scope",
+          "startPos": 5,
+          "endPos": 11
+        },
+        {
+          "entity": "ScopeType::Type",
+          "startPos": 13,
+          "endPos": 17
+        }
+      ]
+    },
+    {
+      "text": "how many prs in the mjpeg repo?",
+      "intent": "TypeCount",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 20,
+          "endPos": 24
+        },
+        {
+          "entity": "ScopeType::Type",
+          "startPos": 9,
+          "endPos": 11
+        }
+      ]
+    },
+    {
+      "text": "issues in octokit",
+      "intent": "ListIssues",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 10,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "issue 999 in mjpeg",
+      "intent": "IssueDetail",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 13,
+          "endPos": 17
+        }
+      ]
+    },
+    {
+      "text": "list issues mjpeg",
+      "intent": "ListIssues",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 12,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "get details for issue 2",
+      "intent": "IssueDetail",
+      "entities": []
+    },
+    {
+      "text": "list issues in mjpeg",
+      "intent": "ListIssues",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 15,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "details issue 7 legoev3",
+      "intent": "IssueDetail",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 16,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "details for issue 3 in mjpeg",
+      "intent": "IssueDetail",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 23,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "get details for issue 3",
+      "intent": "IssueDetail",
+      "entities": []
+    },
+    {
+      "text": "detail 26",
+      "intent": "IssueDetail",
+      "entities": []
+    },
+    {
+      "text": "issue 3 detail",
+      "intent": "IssueDetail",
+      "entities": []
+    },
+    {
+      "text": "issue 8 detail",
+      "intent": "IssueDetail",
+      "entities": []
+    },
+    {
+      "text": "details issue 1 in mjpeg",
+      "intent": "IssueDetail",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 19,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "issue 999 in jjpeg",
+      "intent": "IssueDetail",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 13,
+          "endPos": 17
+        }
+      ]
+    },
+    {
+      "text": "how many pull requests in the wiimotelib repo?",
+      "intent": "TypeCount",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 30,
+          "endPos": 39
+        },
+        {
+          "entity": "ScopeType::Type",
+          "startPos": 9,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "list issues legoev3",
+      "intent": "ListIssues",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 12,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "close issue",
+      "intent": "CloseIssue",
+      "entities": []
+    },
+    {
+      "text": "close issue 27",
+      "intent": "CloseIssue",
+      "entities": []
+    },
+    {
+      "text": "close issue 18 in mjpeg repo",
+      "intent": "CloseIssue",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 18,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "close issue 7 in legoev3",
+      "intent": "CloseIssue",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 17,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "comment issue 12",
+      "intent": "AddIssueComment",
+      "entities": []
+    },
+    {
+      "text": "add new comment",
+      "intent": "AddIssueComment",
+      "entities": []
+    },
+    {
+      "text": "add comment to issue 3",
+      "intent": "AddIssueComment",
+      "entities": []
+    },
+    {
+      "text": "issue create",
+      "intent": "CreateIssue",
+      "entities": []
+    },
+    {
+      "text": "create issue in mjpeg",
+      "intent": "CreateIssue",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 16,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "create issue in legoev3 repo",
+      "intent": "CreateIssue",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 16,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "create issue in botsandbox",
+      "intent": "CreateIssue",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 16,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "close 14",
+      "intent": "CloseIssue",
+      "entities": []
+    },
+    {
+      "text": "close issue 1",
+      "intent": "CloseIssue",
+      "entities": []
+    },
+    {
+      "text": "list issues in botsandbox",
+      "intent": "ListIssues",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 15,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "list public repos",
+      "intent": "ListRepos",
+      "entities": [
+        {
+          "entity": "ScopeType::Scope",
+          "startPos": 5,
+          "endPos": 10
+        },
+        {
+          "entity": "ScopeType::Type",
+          "startPos": 12,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "issue 2 detail",
+      "intent": "IssueDetail",
+      "entities": []
+    },
+    {
+      "text": "detail issue 2",
+      "intent": "IssueDetail",
+      "entities": []
+    },
+    {
+      "text": "detail issue in legoev3",
+      "intent": "IssueDetail",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 16,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "detail issue",
+      "intent": "IssueDetail",
+      "entities": []
+    },
+    {
+      "text": "close issue 2",
+      "intent": "CloseIssue",
+      "entities": []
+    },
+    {
+      "text": "close issue 4 in askdjfa",
+      "intent": "CloseIssue",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 17,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "close issue 14",
+      "intent": "CloseIssue",
+      "entities": []
+    },
+    {
+      "text": "issue 12",
+      "intent": "IssueDetail",
+      "entities": []
+    },
+    {
+      "text": "issue 28",
+      "intent": "IssueDetail",
+      "entities": []
+    },
+    {
+      "text": "issue 13",
+      "intent": "IssueDetail",
+      "entities": []
+    },
+    {
+      "text": "issue 3",
+      "intent": "IssueDetail",
+      "entities": []
+    },
+    {
+      "text": "add issue to myrepo",
+      "intent": "CreateIssue",
+      "entities": [
+        {
+          "entity": "RepoName",
+          "startPos": 13,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "what issues do i have since friday?",
+      "intent": "ListIssues",
+      "entities": []
+    },
+    {
+      "text": "issues since 7/1/2017",
+      "intent": "ListIssues",
+      "entities": []
+    },
+    {
+      "text": "issues since tuesday",
+      "intent": "ListIssues",
+      "entities": []
+    }
+  ]
+}
