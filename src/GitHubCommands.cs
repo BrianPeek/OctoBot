@@ -37,31 +37,8 @@ namespace GitHubBot
 
 			reply.Text = "Please login to GitHub using the button below.";
 
-
-			// TODO: Hack for teams: https://github.com/Microsoft/BotBuilder/issues/2104
-			if(context.Activity.ChannelId == "msteams")
-			{
-				HeroCard card = new HeroCard("Authorize me to access your GitHub account.", "Login to GitHub")
-				{
-					Buttons = new List<CardAction>()
-				};
-
-				CardAction button = new CardAction
-				{
-					Type = ActionTypes.OpenUrl,
-					Value = loginUrl.ToString(),
-					Title = "Login"
-				};
-
-				card.Tap = button;
-				card.Buttons.Add(button);
-				reply.Attachments.Add(card.ToAttachment());
-			}
-			else
-			{
-				SigninCard card = SigninCard.Create("Authorize me to access your GitHub account.", "Login to GitHub", loginUrl.ToString());
-				reply.Attachments.Add(card.ToAttachment());
-			}
+			SigninCard card = SigninCard.Create("Authorize me to access your GitHub account.", "Login to GitHub", loginUrl.ToString());
+			reply.Attachments.Add(card.ToAttachment());
 
 			await context.PostAsync(reply);
 		}
