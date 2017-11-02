@@ -15,5 +15,6 @@ namespace GitHubBot
 		public const string StateKey = "CSRFState";
 		public const string LuisModelIdKey = "LuisModelId";
 		public const string LuisSubscriptionKey = "LuisSubscriptionKey";
+		public const string AppInsightsKey = "AppInsightsKey";
 	}
 }
