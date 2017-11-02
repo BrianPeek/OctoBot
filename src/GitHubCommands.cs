@@ -28,7 +28,7 @@ namespace GitHubBot
 
 			OauthLoginRequest request = new OauthLoginRequest(ConfigurationManager.AppSettings[Constants.GitHubClientIdKey])
 			{
-				Scopes = {"user", "repo"},
+				Scopes = {"repo"},
 				State = csrf,
 				RedirectUri = GetRedirectUri(cr)
 			};
