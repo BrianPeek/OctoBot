@@ -7,7 +7,7 @@ namespace GitHubBot
 {
 	public class Constants
 	{
-		public const string ProductHeader = "GitHubBot";
+		public const string ProductHeader = "OctoBot";
 		public const string AuthTokenKey = "AuthToken";
 		public const string GitHubClientIdKey = "GitHubClientId";
 		public const string GitHubClientSecretKey = "GitHubClientSecret";
@@ -17,7 +17,7 @@ namespace GitHubBot
 		public const string LuisSubscriptionKey = "LuisSubscriptionKey";
 		public const string AppInsightsKey = "AppInsightsKey";
 
-		public static string DemoText = "The **[GitHub Information Bot](https://docs.microsoft.com/en-us/sandbox/demos/githubbot)** is a sample application that demonstrates how to use " +
+		public static string DemoText = "**[OctoBot](https://docs.microsoft.com/en-us/sandbox/demos/githubbot)** is a sample application that demonstrates how to use " +
 								 "[LUIS.ai](https://luis.ai/), [Bot Framework](https://dev.botframework.com/), and [Octokit.NET](https://github.com/octokit/octokit.net) to interact " +
 								 "with your GitHub account, repos, issues, etc. from within a chat window. " +
 								 "For more information on how it was made, please see its article on [The Sandbox](https://docs.microsoft.com/en-us/sandbox/demos/githubbot). " +
