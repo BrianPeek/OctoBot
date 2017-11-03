@@ -81,7 +81,7 @@ namespace GitHubBot.Dialogs
 		[LuisIntent("Help")]
 		public async Task Help(IDialogContext context, LuisResult result)
 		{
-			string message = 
+			string message = Constants.DemoText + 
 					"You can ask me about your repos and issues. Try things like:" + Environment.NewLine + Environment.NewLine +
 					"* How many public repos do I have?" + Environment.NewLine + Environment.NewLine +
 					"* How many issues do I have?" + Environment.NewLine + Environment.NewLine +
